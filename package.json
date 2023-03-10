@@ -1,7 +1,7 @@
 {
   "name": "03-ignite-nodejs-api-solid",
   "version": "1.0.0",
-  "description": "",
+  "description": "Gym Pass Style App",
   "main": "index.js",
   "scripts": {
     "start:dev": "tsx watch src/server.ts",
@@ -12,12 +12,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^18.15.0",
-    "tsup": "^6.6.3",
-    "tsx": "^3.12.3",
-    "typescript": "^4.9.5"
+    "@types/node": "18.15.0",
+    "tsup": "6.6.3",
+    "tsx": "3.12.3",
+    "typescript": "4.9.5"
   },
   "dependencies": {
-    "fastify": "^4.14.1"
+    "fastify": "4.14.1"
   }
 }
