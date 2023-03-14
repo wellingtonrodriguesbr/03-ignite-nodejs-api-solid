@@ -7,8 +7,8 @@ import { UserAlreadyExistsError } from "@/use-cases/errors/user-already-exists";
 export async function register(req: FastifyRequest, reply: FastifyReply) {
   const registerBodySchema = z.object({
     name: z.string(),
-    email: z.string().email().min(6),
-    password: z.string(),
+    email: z.string().email(),
+    password: z.string().min(6),
   });
 
   const { name, email, password } = registerBodySchema.parse(req.body);
@@ -21,8 +21,7 @@ export async function register(req: FastifyRequest, reply: FastifyReply) {
     if (error instanceof UserAlreadyExistsError) {
       return reply.status(409).send({ message: error.message });
     }
-    console.log(error);
-    return reply.status(500);
+    throw error;
   }
 
   return reply.status(201).send();
