@@ -3,7 +3,6 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { app } from "@/app";
 import request from "supertest";
 import { prisma } from "@/lib/prisma";
-import { any } from "zod";
 
 describe("Validate Check-in (e2e)", () => {
   beforeAll(async () => {
