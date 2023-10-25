@@ -30,3 +30,4 @@ jobs:
         echo "${{ secrets.PROD_ENV_FILE }}" > .env
     - run: npx prisma migrate deploy
     - run: npm run build --if-present
+    - run: pm2 restart api-solid-ignite-03
